@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Shirt",
+    "imageUrl": "/assets/shirt.webp",
+    "price": 15.99
+  },
+  {
+    "id": 2,
+    "name": "Watch",
+    "imageUrl": "/assets/watch.png",
+    "price": 28.99
+  },
+  {
+    "id": 3,
+    "name": "Perfume",
+    "imageUrl": "/assets/perfume.webp",
+    "price": 10.05
+  },
+  {
+    "id": 4,
+    "name": "TShirt",
+    "imageUrl": "/assets/Tshirt.jpg",
+    "price": 15.0
+  }
+]
