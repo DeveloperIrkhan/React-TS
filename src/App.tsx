@@ -5,18 +5,21 @@ import "./App.css";
 import Store from "./Pages/Store";
 import About from "./Pages/About";
 import Navbar from "./Components/Navbar";
+import { ShoppingCartContextProvider } from "./Context/CartContext";
 const App = () => {
   return (
-    <div className="">
-      <Navbar />
-      <div className="px-[4vmin]">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Store />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+    <ShoppingCartContextProvider>
+      <div className="">
+        <Navbar />
+        <div className="px-[4vmin] my-[2vmin]">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Store />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </ShoppingCartContextProvider>
   );
 };
 
