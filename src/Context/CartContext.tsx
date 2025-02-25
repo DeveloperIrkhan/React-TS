@@ -2,34 +2,34 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import useLocalStorage from "../CustomHooks/useLocalStorage";
 
 // step 2 creating context
-const shoppingCartContext = createContext({} as ShoppingCartContextProps);
+const shoppingCartContext = createContext({} as IShoppingCartContextProps);
 // step 1 creating custom hook
 export const useShoppingCart = () => useContext(shoppingCartContext);
 
-type ShoppingCartContextProps = {
+interface IShoppingCartContextProps {
   gettingItemQuantity: (id: number) => number;
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromQuantity: (id: number) => void;
-
+  isOpen: boolean;
   toggleCartSideBar: () => void;
   cartQuantity: number;
-  cartItems: CartItem[];
-};
+  cartItems: ICartItem[];
+}
 
-type ShoppingCartProps = {
+interface IShoppingCartProps {
   children: ReactNode;
-};
+}
 
-type CartItem = {
+interface ICartItem {
   id: number;
   quantity: number; // quantity of item in cart
-};
+}
 // step 3 creating provider for the shoppingCartContext
 export const ShoppingCartContextProvider = ({
   children
-}: ShoppingCartProps) => {
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+}: IShoppingCartProps) => {
+  const [cartItems, setCartItems] = useLocalStorage<ICartItem[]>(
     "shopping-cart",
     []
   ); // storage Place
